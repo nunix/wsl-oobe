@@ -2,6 +2,12 @@
  
 Demo of the new WSL2 oobe with container rootfs
 
+## Prerequisites
+
+- Windows 11 or Windows Server 2025
+- [WSL2 v2.4.4](https://github.com/microsoft/WSL/releases/tag/2.4.4)
+- Docker/Rancher/Podman Desktop (pick your preferred one)
+
 ## Quickstart
 
 ```powershell
@@ -10,13 +16,13 @@ wsl --unregister corsairnix
 
 # Build a container based on Azure Linux v3
 ## See Dockerfile.azurelinux for details
-docker build -t nunix/corsairnix -f .\Dockerfile.azurelinux --no-cache .
+docker build -t local/corsairnix -f .\Dockerfile.azurelinux --no-cache .
 
 # [Optional] Remove the container if it exists already
 docker rm corsairnix
 
 # Create a new container without running any command
-docker run --name corsairnix nunix/corsairnix
+docker run --name corsairnix local/corsairnix
 
 # Export the container's rootfs to a directory
 ## [Example] The following directory structure is in place:

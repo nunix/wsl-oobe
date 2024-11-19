@@ -1,0 +1,25 @@
+# syntax = docker/dockerfile:1.1-experimental
+
+FROM mcr.microsoft.com/azurelinux/base/core:3.0
+
+# Add configuration files
+ADD oobe.sh wsl.conf wsl-distribution.conf /etc/
+RUN chmod 0644 /etc/wsl.conf /etc/wsl-distribution.conf && \
+    chmod 0755 /etc/oobe.sh && \
+    chown 1000 /etc/oobe.sh && \
+    mkdir -p /usr/lib/wsl/ && \
+    chown 1000 /usr/lib/wsl/
+
+# Add packages
+RUN tdnf update && \
+    tdnf install -y \
+    ca-certificates \
+    ncurses \
+    procps-ng \
+    shadow-utils \
+    sudo \
+    systemd \
+    vim \
+    which
+
+RUN tdnf install -y https://github.com/fastfetch-cli/fastfetch/releases/download/2.30.1/fastfetch-linux-amd64.rpm

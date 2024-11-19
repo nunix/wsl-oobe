@@ -39,3 +39,7 @@ cp C:\wsl\sources\corsairnix.tar corsairnix.wsl
 ```
 
 Once the `.wsl` file is created, open it by double clicking on it. It will install the WSL2 distro.
+
+## Demo video
+
+https://github.com/user-attachments/assets/72af5a8f-9ee6-4548-8c69-80e66ef7b277

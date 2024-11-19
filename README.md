@@ -42,4 +42,4 @@ Once the `.wsl` file is created, open it by double clicking on it. It will insta
 
 ## Demo video
 
-https://github.com/user-attachments/assets/72af5a8f-9ee6-4548-8c69-80e66ef7b277
+https://github.com/user-attachments/assets/71f73844-8f50-4035-bf37-1d6106290ef8

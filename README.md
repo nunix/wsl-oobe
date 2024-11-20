@@ -36,9 +36,12 @@ docker export -o C:\wsl\sources\corsairnix.tar corsairnix
 
 # Copy the container rootfs file to the current directory and changes the extension to `.wsl`
 cp C:\wsl\sources\corsairnix.tar corsairnix.wsl
+
+# Install the distro from the `.wsl` file
+wsl --install --from-file corsairnix.wsl --location C:\wsl\distros\corsairnix
 ```
 
-Once the `.wsl` file is created, open it by double clicking on it. It will install the WSL2 distro.
+> NOTE: The `.wsl` file can also be installed by double clicking on it.
 
 ## Demo video
 

@@ -5,10 +5,11 @@ FROM mcr.microsoft.com/azurelinux/base/core:3.0
 # Add configuration files
 ADD oobe.sh wsl.conf wsl-distribution.conf /etc/
 RUN chmod 0644 /etc/wsl.conf /etc/wsl-distribution.conf && \
-    chmod 0755 /etc/oobe.sh && \
-    chown 1000 /etc/oobe.sh && \
-    mkdir -p /usr/lib/wsl/ && \
-    chown 1000 /usr/lib/wsl/
+    chmod 0755 /etc/oobe.sh
+
+# Add icon
+RUN mkdir -p /usr/local/share/icons
+ADD corsairnix128.ico /usr/local/share/icons/corsairnix.ico
 
 # Add packages
 RUN tdnf update && \
